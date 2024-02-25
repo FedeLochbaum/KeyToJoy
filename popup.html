@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado a Gamepad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teclado a Gamepad</h1>
+    <button id="enableButton">Habilitar</button>
+    <button id="disableButton">Deshabilitar</button>
+    <script>
+        document.getElementById("enableButton").addEventListener("click", function() {
+            chrome.runtime.sendMessage({ command: "enableExtension" });
+        });
+
+        document.getElementById("disableButton").addEventListener("click", function() {
+            chrome.runtime.sendMessage({ command: "disableExtension" });
+        });
+    </script>
+</body>
+</html>
